@@ -1,0 +1,42 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 44px;
+  padding: var(--sp-3) var(--sp-5);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+}
+
+/* Primary: yellow fill + ink text + ink anchor border */
+.btn--primary {
+  background: var(--yellow);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+/* Ghost: paper + ink thin border */
+.btn--ghost {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn--ghost:hover {
+  background: var(--bg-hover);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,93 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+
+.chart__svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+/* Quadrant tints */
+.chart__q         { fill: var(--paper); }
+.chart__q--hh     { fill: var(--blue-tint); }    /* reg hi, pro hi  → regulation+promotion */
+.chart__q--lh     { fill: var(--orange-tint); }  /* reg lo, pro hi  → promotion-leaning */
+.chart__q--hl     { fill: var(--blue-tint); }    /* reg hi, pro lo  → regulation-leaning */
+.chart__q--ll     { fill: #F5F5F2; }             /* lo lo           → neutral */
+
+.chart__frame {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.chart__midline {
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  opacity: 0.5;
+}
+
+.chart__qlabel {
+  fill: var(--grey);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font);
+}
+
+.chart__axis {
+  fill: var(--grey);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.chart__dot--country {
+  fill: #1D3FD1;
+  stroke: #0E0E0E;
+  stroke-width: 1.25;
+}
+
+.chart__dot--voters {
+  fill: #FFFFFF;
+  stroke: #0E0E0E;
+  stroke-width: 1.75;
+}
+
+.chart__dot--user {
+  fill: #FFC800;
+  stroke: #0E0E0E;
+  stroke-width: 2;
+}
+
+/* Legend */
+.chart__legend {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--grey);
+}
+
+.chart__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.chart__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--r-full);
+  display: inline-block;
+}
+
+.chart__swatch--user    { background: #FFC800; border: 1.5px solid #0E0E0E; }
+.chart__swatch--country { background: #1D3FD1; border: 1.25px solid #0E0E0E; }
+.chart__swatch--voters  { background: #FFFFFF; border: 1.75px solid #0E0E0E; }

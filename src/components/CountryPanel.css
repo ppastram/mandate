@@ -1,0 +1,86 @@
+.country-panel {
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-6));
+}
+
+/* No card: just the content, flanked by thin rules */
+.country-panel__card {
+  background: var(--paper);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--sp-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.country-panel__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--rule);
+}
+
+.country-panel__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+}
+
+.country-panel__subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--grey);
+}
+
+.country-panel__body {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sp-4);
+}
+
+.country-panel__score-col { flex: 1; min-width: 0; }
+
+.country-panel__number {
+  display: block;
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--sp-2);
+  color: var(--ink);
+}
+.country-panel--regulation .country-panel__number { color: var(--blue); }
+.country-panel--promotion  .country-panel__number { color: var(--orange); }
+
+.country-panel__score-desc {
+  font-size: var(--text-sm);
+  color: var(--grey);
+  line-height: var(--leading-snug);
+}
+
+.country-panel__map-col { flex-shrink: 0; }
+
+.country-panel__map-ph {
+  width: 128px;
+  height: 80px;
+  border: 1px solid var(--rule);
+}
+
+.country-panel__map-ph svg { width: 100%; height: 100%; }
+
+.country-panel__note {
+  font-size: var(--text-xs);
+  color: var(--grey);
+  line-height: var(--leading-snug);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--rule);
+}
+
+.country-panel__confidence { color: var(--ink); }
+
+@media (max-width: 960px) {
+  .country-panel { position: static; }
+}

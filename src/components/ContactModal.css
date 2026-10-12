@@ -1,0 +1,107 @@
+.cm__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 14, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+  z-index: 200;
+}
+
+.cm__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: var(--sp-6);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.cm__close {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--ink);
+  transition: background var(--t-fast);
+}
+.cm__close:hover { background: var(--bg-hover); }
+
+.cm__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  padding-right: var(--sp-6);
+  margin-bottom: var(--sp-2);
+  color: var(--ink);
+}
+
+.cm__subtitle {
+  font-size: var(--text-sm);
+  color: var(--grey);
+  margin-bottom: var(--sp-5);
+  line-height: var(--leading-normal);
+}
+
+.cm__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-3);
+}
+
+.cm__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--grey);
+  letter-spacing: 0;
+}
+
+.cm__input {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--sp-3);
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  font: inherit;
+  font-size: var(--text-sm);
+  outline: none;
+}
+
+.cm__input:focus-visible { outline: 2px solid var(--ink); outline-offset: -1px; }
+
+.cm__error {
+  margin: var(--sp-2) 0;
+  padding: var(--sp-3);
+  background: var(--red-subtle);
+  color: var(--red);
+  border: 1px solid var(--red);
+  font-size: var(--text-sm);
+}
+
+.cm__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+
+.cm__success {
+  padding: var(--sp-4) 0;
+}
+.cm__success .cm__subtitle { margin-bottom: var(--sp-6); }
+
+@keyframes cm-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.cm__backdrop { animation: cm-fade 120ms ease; }
